@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+nhập số<input id="num">
+<button onclick="checkPrime(+document.getElementById('num').value)">Check</button>
+<script>
+    function isPrime(num){
+        if (num<2) return false;
+        if (num<4) return true;
+        let i = 2;
+        while (i  <= num/2){
+            if(num%i === 0){
+                return false;
+            }
+            i++;
+        }
+        return true;
+    }
+        // let i = 2;
+        // while (i < 1000) {
+        //     if (isPrime(i) === true)
+        //         document.write(i + "<br>")
+        //     i++;
+        //
+        // }
+    function checkPrime(){
+            let prime = isPrime(+document.getElementById('num').value);
+            if(prime === true){
+                alert("là số nguyên tố");
+            }else{
+                alert("ko phải là số nguyên tố");
+            }
+    }
+</script>
+</body>
+</html>
